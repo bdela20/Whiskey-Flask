@@ -1,4 +1,4 @@
-from flask_sqlalchemy import flask_SQLAlchemy 
+from flask_sqlalchemy import SQLAlchemy 
 from flask_migrate import Migrate
 import uuid
 from datetime import datetime
