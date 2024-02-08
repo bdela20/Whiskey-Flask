@@ -28,3 +28,10 @@ SQLAlchemy==2.0.21
 typing_extensions==4.8.0
 Werkzeug==2.3.7
 WTForms==3.0.1
+
+
+# python3 -m venv venv
+# source venv/bin/activate
+# pip install --upgrade pip
+# pip install -r requirements.txt
+# pip freeze (to see all)
