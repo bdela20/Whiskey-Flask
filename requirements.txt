@@ -36,3 +36,4 @@ WTForms==3.0.1
 # pip install -r requirements.txt
 # pip freeze (to see all)
 # Token: 78f14dae084a87f472fd124e07337c14813099d605db37e3
+# To remove from Github: git rm --cached -r (the Folder)
