@@ -4,11 +4,11 @@ from models import db, User, Contact, contact_schema, contacts_schema
 
 api = Blueprint('api', __name__, url_prefix='/api')
 
-@api.route('/getdata')
+@api.route('/mydata')
 def getdata():
     return {'yee':'haw'}
 
-@api.route('/contacts', methods = ['POST'])
+@api.route('/whiskeys', methods = ['POST'])
 @token_required
 def create_contact(current_user_token):
     name = request.json['name']
@@ -28,7 +28,7 @@ def create_contact(current_user_token):
     return jsonify(response)
 
 
-@api.route('/contacts', methods=['GET'])
+@api.route('/whiskeys', methods=['GET'])
 @token_required
 def get_contact(current_user_token):   
     a_user = current_user_token.token
@@ -36,14 +36,14 @@ def get_contact(current_user_token):
     response = contacts_schema.dump(contacts)
     return jsonify(response)
 
-@api.route('/contacts/<id>', methods = ['GET'])
+@api.route('/whiskeys/<id>', methods = ['GET'])
 @token_required
 def get_single_contact(current_user_token, id):
     contact = Contact.query.get(id)
     response = contact_schema.dump(contact)
     return jsonify(response)
 
-@api.route('/contacts/<id>', methods = ['POST','PUT'])
+@api.route('/whiskeys/<id>', methods = ['POST','PUT'])
 @token_required
 def update_contact(current_user_token,id):
     contact = Contact.query.get(id) 
@@ -57,7 +57,7 @@ def update_contact(current_user_token,id):
     response = contact_schema.dump(contact)
     return jsonify(response)
 
-@api.route('/contacts/<id>', methods = ['DELETE'])
+@api.route('/whiskeys/<id>', methods = ['DELETE'])
 @token_required
 def delete_contact(current_user_token, id):
     contact = Contact.query.get(id)

@@ -33,7 +33,7 @@ class User(db.Model, UserMixin):
         self.last_name = last_name
         self.password = self.set_password(password)
         self.email = email
-        self.token = self.set_token(24)
+        self.token = self.set_token(100)
         self.g_auth_verify = g_auth_verify
 
     def set_token(self, length):
